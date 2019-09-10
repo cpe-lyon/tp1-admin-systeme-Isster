@@ -228,11 +228,17 @@ Pour celà, il suffit de tapper la commande:
 Il faut pour cela tapper la commande:
 <code>find / -name passwd > ~/list_passwd_files.txt 2>> /dev/null </code></br>
 
-### 22) Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vuprécédemment
+### 22) Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vu précédemment
 Apres avoir tappé la commande: 
 <code>grep ll </code> on sait que l'alias ll est defini dans les options de grep. (Marqué grep[Option])</br>
 
+### 23) Utilisez la commande locate pour trouver le fichier history.log
+Après avoir tapper la commande: 
+<code>locate history.log</code></br>
+Le fichier history.log apparait selon le chemin suivant: /var/log/apt/history.log. </br>
 
+### 24) Créer un fichier dans votre dossier personnel puis utilisez locate pour le trouver. Apparaît-il ? Pourquoi ?
+Une fois le dossier créer, lorsque l'on essaye de le localiser il n'apparait pas.
 
 
 
