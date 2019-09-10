@@ -111,9 +111,6 @@ touch nom
 Pour créer un fichier.
 </br>
 
-
-
-
 ### 8) Revenez dans votre dossier personnel; à l’aide de la commande rm, essayez de supprimer Fichier1, puis Dossier1; que se passe-t-il? 
 
 En essayant d'utiliser la commande <code>rm Dossier1/Fichier1</code> ou <code>rm dossier1 </code>. On ne peux pas supprimer le dossier cependant le fichier sera supprimé si l'on utilise un chemin relatif.
@@ -174,4 +171,70 @@ Cette commande permet de créer un fichier nommé plop. Puis une fois créer, il
 Cette commande permet de créer un fichier nommé plop. Puis une fois créer, il inscrit dans le fichier ce qui est écrit entre '' soit yo. Mais si on le fait 2x alors yo sera écrit à la suite du premier yo.
 </br>
 
-### 10)
+### 10) A quoi sert la commande file ? Essayez la sur des fichiers de types différents.
+La commande **file** permet de déterminer le type de fichier en dehors de son extension.
+</br>
+
+### 11) Créez un fichier toto qui contient la chaîne Hello Toto ! ; créer ensuite un lien titi vers ce fichier avec la commande ln toto titi. Modifiez à présent le contenu de toto et affichez le contenu de titi : qu’observe-t-on ? Supprimez le fichier toto ; quelle conséquence cela a-t-il sur titi ?
+
+Afin de créer le fichier toto qui contient la chaine "Hello Toto", il faut faire la commande: </br>
+<code>echo "Hello Toto !" > Toto </code></br>
+Apres avoir effectué le lien, lorsque l'on modifie le contenu de Toto, le contenu de Titi aussi change par conrte si l'on supprime le dossier Toto le dossier Titi quand à lui reste inchangé.</br>
+
+### 12) Créez à présent un lien symbolique tutu sur titi avec la commande ln -s titi tutu. Modifiez le contenu de titi ; quelle conséquence pour tutu ? Et inversement ? Supprimez le fichier titi ; quelle conséquence cela a-t-il sur tutu ?
+
+Après avoir créer un lien symbolique entre Titi et tutu, lorsque l'on modifie le contenu de titi, le contenu de tutu y est également changé de la même façon. De plus lorsque titi est supprimé, alors tout le contenu de tutu est supprimé également.
+</br>
+
+### 13) Affichez à l’écran le fichier /var/log/syslog. Quels raccourcis clavier permettent d’interrompre et reprendre le défilement à l’écran ?
+
+Les raccourcis clavier permettant de stoper le defilement puis de reprendre sont:</br>
+**Ctrl + s** Pour stoper le défilement </br>
+**Ctrl + q** Pour reprendre le defilement </br>
+
+### 14) Affichez les 5 premières lignes du fichier /var/log/syslog, puis les 15 dernières, puis seulement les lignes 10 à 20.
+
+Afin d'afficher les 5 premières lignes du fichier il faut tappé la commande:
+<code> head -5 /var/log/syslog </code></br>
+Puis les 15 dernières:
+<code> tail -15 /var/log/syslog </code></br>
+Enfin les lignes 10 à 20 :
+<code> head -n 10 /var/log/syslog | tail -n 20 </code></br>
+
+### 15) Que fait la commande dmesg | less ?
+La commande dmesg | less permet de voir la mémorie tampon utilisé par le noyau pour les messages (Page par page).
+
+### 16) Affichez à l’écran le fichier /etc/passwd ; que contient-il ? Quelle commande permet d’afficher la page de manuel de ce fichier ?
+Le fichier /etc/passwd contient tout ce qui concernent les utilisateurs (par ex: login, mot de passe...).</br>
+La commande qui permet d'afficher la page de manuel de ce fichier est: <code>man passwd </code>.</br>
+
+### 17) Affichez seulement la première colonne triée par ordre alphabétique inverse
+Afin d'afficher la première colonne triée apr ordre alphabetique inverse, il faut tapper:
+<code>sort +0 -r /etc/passwd</code></br>
+
+### 18) Quelle commande nous donne le nombre d’utilisateurs ?
+Pour voir le nombre d'utilisateurs il faut tapper la commande:
+<code>wc -l /etc/passwd</code></br>
+
+### 19) Combien de pages de manuel comportent le mot-clé conversion dans leur description ?
+Après avoir tappé la commande: 
+<code>man -k conversion </code> on voit que le mot-clé conversion apparait dans 4 pages de manuel.</br>
+
+### 20) A l’aide de la commande find, recherchez tous les fichiers se nommant passwd présents sur la machine
+Pour celà, il suffit de tapper la commande: 
+<code>find / -name passwd </code></br>
+
+### 21) Modifiez la commande précédente pour que la liste des fichiers trouvés soit enregistrée dans le fichier ~/list_passwd_files.txt et que les erreurs soient redirigées vers le fichier spécial /dev/null
+Il faut pour cela tapper la commande:
+<code>find / -name passwd > ~/list_passwd_files.txt 2>> /dev/null </code></br>
+
+### 22) Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vuprécédemment
+Apres avoir tappé la commande: 
+<code>grep ll </code> on sait que l'alias ll est defini dans les options de grep. (Marqué grep[Option])</br>
+
+
+
+
+
+
+
